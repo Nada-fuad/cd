@@ -24,13 +24,7 @@ jobs:
           cache: "npm"
       - run: npm ci
       - run: npm run build --if-present
-      - name: Check JSON file
-        run: |
-          ls /public/cifar10_example/trained_models/test/mobilenetv3_small_100/plots/
-          cat /public/cifar10_example/trained_models/test/mobilenetv3_small_100/plots/test_confusion.json
-      - name: Deploy with gh-pages
-        run: |
-          git remote set-url origin https://git:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git
-          npm run deploy -- -u "github-actions-bot <support+actions@github.com>"
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - name: Show current directory
+        run: pwd
+      - name: Check directory content
+        run: ls /cifar10_example/trained_models/test/mobilenetv3_small_100/plots/
