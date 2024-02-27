@@ -26,8 +26,8 @@ jobs:
       - run: npm run build --if-present
       - name: Check JSON file
         run: |
-          ls /cifar10_example/trained_models/test/mobilenetv3_small_100/plots/
-          cat /cifar10_example/trained_models/test/mobilenetv3_small_100/plots/test_confusion.json
+          ls /public/cifar10_example/trained_models/test/mobilenetv3_small_100/plots/
+          cat /public/cifar10_example/trained_models/test/mobilenetv3_small_100/plots/test_confusion.json
       - name: Deploy with gh-pages
         run: |
           git remote set-url origin https://git:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git
