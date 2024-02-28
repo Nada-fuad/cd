@@ -1,30 +1,19 @@
-name: Node.js CI
+name: Check Directory Content
 
 on:
   push:
-    branches: ["main"]
-  pull_request:
-    branches: ["main"]
+    branches: [main]
 
 jobs:
-  build:
+  check_directory_content:
     runs-on: ubuntu-latest
 
-    strategy:
-      matrix:
-        node-version: [20.x]
-        # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
-
     steps:
-      - uses: actions/checkout@v3
-      - name: Use Node.js ${{ matrix.node-version }}
-        uses: actions/setup-node@v3
-        with:
-          node-version: ${{ matrix.node-version }}
-          cache: "npm"
-      - run: npm ci
-      - run: npm run build --if-present
-      - name: Show current directory
+      - name: Checkout Repository
+        uses: actions/checkout@v2
+
+      - name: Show Current Directory
         run: pwd
-      - name: Check directory content
+
+      - name: Check Directory Content
         run: ls /cifar10_example/trained_models/test/mobilenetv3_small_100/plots/
