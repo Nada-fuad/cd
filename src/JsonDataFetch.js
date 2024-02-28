@@ -1,8 +1,9 @@
 import React, { useEffect, useState, useCallback } from "react";
+import config from "./config.json";
 
 const JsonDataFetch = ({ onDataSet }) => {
   const [data, setData] = useState(null);
-
+  const o = config.apiUrl;
   const jsonPlotData = [
     //MOBILENETV18
 
@@ -10,7 +11,7 @@ const JsonDataFetch = ({ onDataSet }) => {
 
     // "/cifar10_example/trained_models/test/mobilenetv3_small_100/plots/test_pr_curve.json",
 
-    "/cifar10_example/trained_models/test/mobilenetv3_small_100/plots/test_confusion.json",
+    o,
   ];
 
   // eslint-disable-next-line react-hooks/exhaustive-deps
