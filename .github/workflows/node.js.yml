@@ -16,4 +16,4 @@ jobs:
         run: pwd
 
       - name: Check Directory Content
-        run: ls ../public/cifar10_example/trained_models/test/mobilenetv3_small_100/plots/test_confusion.json
+        run: ls ../cifar10_example/trained_models/test/mobilenetv3_small_100/plots/test_confusion.json
