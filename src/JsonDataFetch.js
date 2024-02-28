@@ -3,7 +3,6 @@ import config from "./config.json";
 
 const JsonDataFetch = ({ onDataSet }) => {
   const [data, setData] = useState(null);
-  const apiUrl = process.env.REACT_APP_API_URL;
 
   const o = config.apiUrl;
   const jsonPlotData = [
