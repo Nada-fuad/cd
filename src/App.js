@@ -9,6 +9,7 @@ function App() {
       <h1> LinePlot LIVEeooo</h1>
       <LineChart />
       <JsonParentData />
+      <JsonParentData />
     </div>
   );
 }
