@@ -30,7 +30,7 @@ jobs:
       - name: Deploy with gh-pages
         run: |
           # Set API URL as environment variable
-          export API_URL=$(cat config.json | jq -r .apiUrl)
+          export API_URL=$(cat src/config.json | jq -r .apiUrl)
           # Run deployment script
           git remote set-url origin https://git:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git
           npm run deploy -- -u "github-actions-bot <support+actions@github.com>"
