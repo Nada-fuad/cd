@@ -6,9 +6,9 @@ import JsonParentData from "./JsonParentData";
 function App() {
   return (
     <div className="App">
-      <h1> LinePlot LIVEeooo</h1>
+      <h1> CI/CD update</h1>
       <LineChart />
-      <JsonParentData />
+
       <JsonParentData />
     </div>
   );
